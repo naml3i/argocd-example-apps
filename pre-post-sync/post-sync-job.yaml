@@ -12,6 +12,6 @@ spec:
       - name: sleep
         image: alpine:latest
         command: ["/bin/sh","-c"]
-        args: ["echo 'post job starting...'; echo 'sleeping...'; sleep 20; echo 'post job finished...'"]
+        args: ["echo 'post job starting...'; echo 'sleeping...'; sleep 10; echo 'post job finished...'"]
       restartPolicy: Never
   backoffLimit: 0
