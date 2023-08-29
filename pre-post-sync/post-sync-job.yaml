@@ -16,6 +16,8 @@ spec:
       - name: slack-notification
         image: curlimages/curl
         command:
-          - "curl -X POST -H 'Content-type: application/json' --data '{"text":"Sync succesfully!"}' https://hooks.slack.com/services/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"
+          - "curl -X POST -H 'Content-type: application/json' "
+          - --data '{"text":"Sync succesfully!"}' 
+          - https://hooks.slack.com/services/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"
       restartPolicy: Never
   backoffLimit: 0
