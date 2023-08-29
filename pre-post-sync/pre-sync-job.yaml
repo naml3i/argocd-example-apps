@@ -11,6 +11,7 @@ spec:
       containers:
       - name: sleep
         image: alpine:latest
-        command: ["sleep", "10"]
+        command: ["/bin/sh","-c"]
+        args: ["echo 'presync job starting...'; echo 'sleeping...'; sleep 20; echo 'presync job finished...'"]
       restartPolicy: Never
   backoffLimit: 0
