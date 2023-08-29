@@ -21,6 +21,6 @@ spec:
           - "POST"
           - "--data-urlencode"
           - "payload={\"channel\": \"#next-gen-cicd\", \"username\": \"hello\", \"text\": \"App Sync succeeded\", \"icon_emoji\": \":ghost:\"}"
-          - "https://hooks.slack.com/services/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"
+          - "https://hooks.slack.com/services/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"
       restartPolicy: Never
   backoffLimit: 0
