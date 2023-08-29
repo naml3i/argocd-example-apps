@@ -1,0 +1,19 @@
+# Sync (i.e. 'during sync') hook to orchestrate a complex deployment requiring more sophistication than the Kubernetes rolling update strategy.
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: this-job-run-during-sync
+  annotations:
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: sleep
+        image: alpine:latest
+        command: ["/bin/sh","-c"]
+        args: ["echo 'sync job starting...'; echo 'sleeping...'; sleep 10; echo 'sync job finished...'"]
+      restartPolicy: Never
+  backoffLimit: 0
