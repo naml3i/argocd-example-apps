@@ -11,6 +11,7 @@ spec:
       containers:
       - name: sleep
         image: alpine:latest
-        command: ["sleep", "10"]
+        command: ["/bin/sh","-c"]
+        args: ["sleep 15; echo 'postsync job finished...'"]
       restartPolicy: Never
   backoffLimit: 0
