@@ -14,7 +14,7 @@ spec:
         command: ["/bin/sh","-c"]
         args: ["echo 'post job starting...'; echo 'sleeping...'; sleep 10; echo 'post job finished...'"]
       - name: slack-notification
-        image: curlimages/curl
+        image: alpine:latest
         command:
           - "curl -X POST -H 'Content-type: application/json' "
           - --data '{"text":"Sync succesfully!"}' 
