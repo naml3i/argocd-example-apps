@@ -15,6 +15,7 @@ spec:
         args: ["echo 'presync job starting...'; echo 'sleeping...'; sleep 10; sh /opt/usr/runtests.sh; echo 'presync job finished...'"]
       - name: sleep
         image: alpine:latest
-        command: ["sleep 10"]
+        command: ["/bin/sh","-c"]
+        args: ["echo 'sleeping...'; sleep 10; echo 'sleeping 10s finished...'"]
       restartPolicy: Never
   backoffLimit: 0
