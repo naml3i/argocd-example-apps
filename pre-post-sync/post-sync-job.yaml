@@ -18,6 +18,6 @@ spec:
         command:
           - "curl -X POST -H 'Content-type: application/json' "
           - --data '{"text":"Sync succesfully!"}' 
-          - https://hooks.slack.com/services/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"
+          - https://hooks.slack.com/services/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"
       restartPolicy: Never
   backoffLimit: 0
