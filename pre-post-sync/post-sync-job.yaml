@@ -14,10 +14,12 @@ spec:
         command: ["/bin/sh","-c"]
         args: ["echo 'post job starting...'; echo 'sleeping...'; sleep 10; echo 'post job finished...'"]
       - name: slack-notification
-        image: alpine:latest
-        command:
-          - "curl -X POST -H 'Content-type: application/json' "
-          - --data '{"text":"Sync succesfully!"}' 
-          - https://hooks.slack.com/services/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"
+        image: curlimages/curl:latest
+        command: ["sh", "-c"]
+        args:
+          - |
+            SLACK_WEBHOOK_URL="https://hooks.slack.com/services/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"
+            MESSAGE="Sync operation completed!"
+            curl -X POST -H 'Content-type: application/json' --data "{'text':'$MESSAGE'}" $SLACK_WEBHOOK_URL
       restartPolicy: Never
   backoffLimit: 0
