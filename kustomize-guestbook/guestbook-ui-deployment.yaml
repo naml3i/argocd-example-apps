@@ -18,6 +18,9 @@ spec:
         name: guestbook-ui
         ports:
         - containerPort: 80
+      failurePolicy: Rollback
+      retryStrategy:
+        maxAttempts: 5
   postSync:
     commands:
       - name: test
