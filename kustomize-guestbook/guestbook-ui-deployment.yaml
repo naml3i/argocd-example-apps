@@ -25,9 +25,6 @@ spec:
             cpu: "200m"
         ports:
         - containerPort: 80
-      failurePolicy: Rollback
-      retryStrategy:
-        maxAttempts: 5
   postSync:
     commands:
       - name: test
