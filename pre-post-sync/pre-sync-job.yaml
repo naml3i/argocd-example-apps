@@ -13,8 +13,8 @@ spec:
         image: docker-production-agp.nce.dockerhub.rnd.amadeus.net/docker-production-agp/pulse/qa/pulse-robot-tester:1.0.85
         command: ["/bin/sh","-c"]
         args: ["echo 'presync job starting...'; echo 'sleeping...'; sleep 10; sh /opt/usr/runtests.sh; echo 'presync job finished...'"]
-      - name: fail-job
+      - name: sleep
         image: alpine:latest
-        command: ["sh /opt/usr/runtests.sh"]
+        command: ["sleep 10"]
       restartPolicy: Never
   backoffLimit: 0
