@@ -21,8 +21,8 @@ spec:
             SLACK_WEBHOOK_URL="https://hooks.slack.com/services/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"
             MESSAGE="Sync operation completed!"
             curl -X POST -H 'Content-type: application/json' --data "{'text':'$MESSAGE'}" $SLACK_WEBHOOK_URL
-      restartPolicy: Always
-      failurePolicy: Rollback
-      retryStrategy:
-        maxAttempts: 5
+        restartPolicy: Always
+        failurePolicy: Rollback
+        retryStrategy:
+          maxAttempts: 5
   backoffLimit: 0
