@@ -17,5 +17,5 @@ spec:
         image: alpine:latest
         command: ["/bin/sh","-c"]
         args: ["echo 'sleeping...'; sleep 10; echo 'sleeping 10s finished...'"]
-      restartPolicy: Never
+        restartPolicy: Never
   backoffLimit: 0
