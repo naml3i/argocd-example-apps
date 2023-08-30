@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: 3
+  replicas: 2
   revisionHistoryLimit: 5
   selector:
     matchLabels:
@@ -28,11 +28,11 @@ spec:
       failurePolicy: Rollback
       retryStrategy:
         maxAttempts: 5
-  # postSync:
-  #   commands:
-  #     - name: test
-  #       command: ["make", "test"]
-  #       ignoreFailure: false
+  postSync:
+    commands:
+      - name: test
+        command: ["test"]
+        ignoreFailure: false
   rollback:
     enabled: true
     strategy:
