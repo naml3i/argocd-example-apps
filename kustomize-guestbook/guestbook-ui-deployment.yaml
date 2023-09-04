@@ -4,7 +4,7 @@ metadata:
   name: guestbook-ui
 spec:
   replicas: 3
-  revisionHistoryLimit: 5
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: guestbook-ui
@@ -30,10 +30,10 @@ spec:
       - name: test
         command: ["test"]
         ignoreFailure: false
-  # rollback:
-  #   enabled: true
-  #   strategy:
-  #     type: RollingUpdate
-  #     rollingUpdate:
-  #       maxUnavailable: 1
-  #       maxSurge: 1
+  rollback:
+    enabled: true
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 1
+        maxSurge: 1
